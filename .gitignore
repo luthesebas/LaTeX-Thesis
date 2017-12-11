@@ -219,5 +219,5 @@ TSWLatexianTemp*
 # expex forward references with \gathertags
 *-tags.tex
 
-ResearchProject/metadata/*
-!ResearchProject/metadata/gitkeep.txt
+**/metadata/*
+!*/metadata/gitkeep.txt
