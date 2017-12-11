@@ -1,0 +1,306 @@
+%%%------------------------------------%%%
+%%% General
+%%%------------------------------------%%%
+\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+
+\usepackage[ngerman]{babel}
+\addto\captionsngerman{\renewcommand{\refname}{\nameofreferences}}
+
+\usepackage[headings]{fullpage}
+\usepackage{changepage}
+\usepackage[bottom]{footmisc}
+
+\parindent0cm
+\clubpenalty=10000
+\widowpenalty=10000
+
+%%%------------------------------------%%%
+%%% Line spacing
+%%%------------------------------------%%%
+\usepackage{setspace}
+
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+
+%%%--------------------------------%%%
+%%% Font
+%%%--------------------------------%%%
+\usepackage{\typeface} % lmodern, palatino
+
+%%%------------------------------------%%%
+%%% Caption
+%%%------------------------------------%%%
+\usepackage{caption}
+\captionsetup{labelfont=sc, textfont=it} % ... in small caps
+\captionsetup[figure]{name=\nameoffigures}
+\captionsetup[table]{name=\nameoftables}
+
+%%%------------------------------------%%%
+%%% Quote
+%%%------------------------------------%%%
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
+%%%------------------------------------%%%
+%%% Frames
+%%%------------------------------------%%%
+\usepackage{framed}
+
+%%%------------------------------------%%%
+%%% Links
+%%%------------------------------------%%%
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks,colorlinks,breaklinks = true,
+	colorlinks = true, 		%Color links instead of boxes
+	urlcolor   = black,		%Color for external hyperlinks
+	linkcolor  = black, 	%Color of internal links
+	citecolor  = black,		%Color of citations
+	bookmarksopen = false
+}
+
+%%%------------------------------------%%%
+%%% Bibliography
+%%%------------------------------------%%%
+\usepackage[
+	backend=biber,
+	style=authoryear,
+	citestyle=authoryear]{biblatex}
+\addbibresource{references.bib}
+
+%%%------------------------------------%%%
+%%% Header & footer
+%%%------------------------------------%%%
+\usepackage{fancyhdr}
+
+\fancypagestyle{nice}{%
+	\fancyhf{}
+	\fancyhead[L]{\leftmark}
+	\fancyfoot[C]{\rule{2cm}{0.5pt}\\[0.1em]\thepage}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{simple}{%
+	\fancyhead{}
+	\fancyfoot[C]{\rule{2cm}{0.5pt}\\[0.1em]\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+%%%------------------------------------%%%
+%%% Advanced enumeration
+%%%------------------------------------%%%
+\usepackage{enumitem}
+
+%%%------------------------------------%%%
+%%% Advanced color
+%%%------------------------------------%%%
+\usepackage{xcolor}
+
+%%%------------------------------------%%%
+%%% Picture
+%%%------------------------------------%%%
+% https://en.wikibooks.org/wiki/LaTeX/Importing_Graphics
+
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{placeins}
+
+% Print picture(s)/floats before the barrier
+% \FloatBarrier
+
+%\bigskip
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=\textwidth]{Bilder/bildname}
+%	\caption{Hallo du da}
+%	\label{fig:BSP}
+%\end{figure}
+
+%%%------------------------------------%%%
+%%% Table
+%%%------------------------------------%%%
+% https://en.wikibooks.org/wiki/LaTeX/Tables
+
+\usepackage{multirow}	
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+% \begin{tabular}[<pos>]{<spc>}
+
+% <pos> = !b (bottom), !t (top),  !h (here)
+% <spc> = l (left), c (center), r (right), | 
+% 		= p{<width>} (vertically top), 
+% 		  m{<width>} (vertically middle), 
+% 		  b{<width>} (vertically bottom)
+
+%\bigskip
+%\begin{table}[h!]
+%	\centering
+%	{\renewcommand{\arraystretch}{1.5}
+%		\begin{tabular}{cc}
+%			\toprule 
+%			Hi & du \\ 
+%			\midrule 
+%			da & ! \\ 
+%			da & ! \\ 
+%			\cmidrule{1}
+%			da & ! \\
+%			\bottomrule 
+%		\end{tabular}
+%	}
+%	\caption{Hallo du da}
+%	\label{tab:BSP}
+%\end{table}
+
+%%%------------------------------------%%%
+%%% Acronym
+%%%------------------------------------%%%
+\usepackage[printonlyused]{acronym}
+
+%%%------------------------------------%%%
+%%% Math
+%%%------------------------------------%%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{theorem}
+
+%%%------------------------------------%%%
+%%% List of equations
+%%%------------------------------------%%%
+\usepackage{float}
+\newfloat{eq}{H}{for}[section]
+\newcommand{\forname}{\nameofequationstable}
+\newcommand{\listofequations}{\listof{eq}{\forname}}
+
+\newcommand{\eqlabel}[2]{
+	\label{#1}
+	\addcontentsline{for}{eq}{(\ref{#1}) \quad #2}}
+
+%%%------------------------------------%%%
+%%% Listings
+%%%------------------------------------%%%
+\usepackage{listings}
+\renewcommand{\lstlistingname}{\nameoflistings}
+\renewcommand{\lstlistlistingname}{\nameoflistingstable}
+
+\lstset{
+	literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+}
+
+%\bigskip
+%\begin{center}
+%	\begin{minipage}[!h]{\textwidth}
+%		\lstinputlisting[
+%		style = nice,
+%		language = java,
+%		label = alg:BSP,
+%		caption = Deklaration,
+%		firstline = 4, lastline = 7, firstnumber = 4
+%		]{Code/algDeclaration.java}
+%	\end{minipage}
+%\end{center}
+
+%\lstinputlisting[nolol = true, style = txtfile]{Code/exception.txt}
+
+%%%------------------------------------%%%
+%%% Fancy Listings
+%%%------------------------------------%%%
+\definecolor{lstBlue}{RGB}{42,0,255} 	% strings
+\definecolor{lstGreen}{RGB}{41,96,68} 	% comments
+\definecolor{lstPurple}{RGB}{127,0,85} 	% keywords
+\definecolor{lstBG}{RGB}{255, 255, 255} % background
+
+%%% Code style > FANCY <
+%%%------------------------------------%%%
+\lstdefinestyle{fancy}{
+	backgroundcolor=\color{lstBG}, 
+	captionpos=t,
+	frame=b,          		% frame
+	framesep=1pt,
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	numbers=left,			% line numbers
+	numberstyle=\scriptsize,
+	numbersep=2.5ex,		% space between line number and code		
+	numberblanklines=true,	% line number at empty lines?
+	extendedchars=true,	
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{lstPurple}\bfseries,
+	stringstyle=\color{lstBlue},
+	commentstyle=\color{lstGreen},
+	morecomment=[s][\color{lstGreen}]{/**}{*/},
+	stepnumber=1,
+	tabsize=3,
+	showspaces=false,
+	showstringspaces=false,
+	columns=fullflexible,
+	breaklines=true
+}
+
+%%% Code style > txtfile <
+%%%------------------------------------%%%
+\lstdefinestyle{txtfile}{
+	backgroundcolor=\color{lstBG}, 
+	captionpos=t,
+	frame=b,          		% frame
+	framesep=1pt,
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	numbers=left,			% line numbers
+	numberstyle=\scriptsize,
+	numbersep=2.5ex,		% space between line number and code		
+	numberblanklines=true,	% line number at empty lines?
+	extendedchars=true,	
+	basicstyle=\ttfamily\small,
+	stepnumber=1,
+	tabsize=3,
+	showspaces=false,
+	showstringspaces=false,
+	columns=fullflexible,
+	breaklines=true
+}
+
+%\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[RGB]{222,222,222}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+%\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+\captionsetup[lstlisting]{format=listing, singlelinecheck=false, margin=0pt, font={footnotesize}}
+
+%%%------------------------------------%%%
+%%% PDF
+%%%------------------------------------%%%
+\usepackage{pdfpages}
+
+%%%------------------------------------%%%
+%%% List of appendix
+%%%------------------------------------%%%
+\usepackage{etoc}
+
+%%%------------------------------------%%%
+%%% Page Separation
+%%%------------------------------------%%%
+\usepackage{paracol}
+\globalcounter*
+

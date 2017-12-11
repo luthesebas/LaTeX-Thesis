@@ -1,0 +1,36 @@
+%%%--------------------------------%%%
+%%% Appendix
+%%%--------------------------------%%%
+\clearpage
+\label{appendix}
+
+\pagestyle{nice}
+\fancyhead[L]{\MakeUppercase{\nameofappendix}}
+\phantomsection
+\addcontentsline{toc}{section}{\nameofappendix}
+
+\pagenumbering{Roman} 			% Continue with roman numbering
+\setcounter{page}{\thesavepage} % Continue with roman page counter
+
+% Table of appendix	
+\etocdepthtag.toc{mtappendix}
+\etocsettagdepth{mtchapter}{none}
+\etocsettagdepth{mtappendix}{subsection}
+\etoctocstyle{1}{\nameofappendix}
+\tableofcontents
+
+% Appendix content
+\clearpage
+\appendix
+
+\foreach \i in {00,01,02,03,04,05,06,07,08,09,...,99} {%
+	\edef\FileName{D_Appendix/\i_appendix}%
+	\IfFileExists{\FileName}{%
+		\input{\FileName}
+	}
+	{%
+		% File does not exist
+	}
+}
+
+

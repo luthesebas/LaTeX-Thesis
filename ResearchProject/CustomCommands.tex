@@ -1,0 +1,76 @@
+%%%--------------------------------%%%
+%%% Custom commands
+%%%--------------------------------%%%
+\newcommand{\leaveout}{[\dots]~}
+\newcommand{\citep}[1]{\citeauthor{#1} (\citeyear{#1})}
+
+
+
+
+
+%%%------------------------------------%%%
+%%% Fancy Quotes
+%%%------------------------------------%%%
+
+\makeatletter
+\newenvironment{cquote}[2][2em]
+{\setlength{\@tempdima}{#1}%
+	\def\chapquote@author{#2}%
+	\parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+	\itshape}
+{\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+\definecolor{quotemark}{gray}{0.7}
+\makeatletter
+\def\fquote{%
+	\@ifnextchar[{\fquote@i}{\fquote@i[]}%]
+}%
+\def\fquote@i[#1]{%
+	\def\tempa{#1}%
+	\@ifnextchar[{\fquote@ii}{\fquote@ii[]}%]
+}%
+\def\fquote@ii[#1]{%
+	\def\tempb{#1}%
+	\@ifnextchar[{\fquote@iii}{\fquote@iii[]}%]
+}%
+\def\fquote@iii[#1]{%
+	\def\tempc{#1}%
+	\vspace{1em}%
+	\noindent%
+	\begin{list}{}{%
+			\setlength{\leftmargin}{0.1\textwidth}%
+			\setlength{\rightmargin}{0.1\textwidth}%
+		}%
+		\item[]%
+		\begin{picture}(0,0)%
+		\put(-15,-5){\makebox(0,0){\scalebox{3}{\textcolor{quotemark}{``}}}}%
+		\end{picture}%
+		\begingroup\itshape}%
+	%%%%********************************************************************
+	\def\endfquote{%
+		\endgroup\par%
+		\makebox[0pt][l]{%
+			\hspace{0.8\textwidth}%
+			\begin{picture}(0,0)(0,0)%
+			\put(15,15){\makebox(0,0){%
+					\scalebox{3}{\color{quotemark}''}}}%
+			\end{picture}}%
+		\ifx\tempb\empty%
+		\hfill\rule{100pt}{0.5pt}\\%
+		\mbox{}\hfill\textsc{\tempa}%
+		\else%
+		\ifx\tempc\empty%
+		\hfill\rule{100pt}{0.5pt}\\%
+		\mbox{}\hfill\textsc{\tempa},\ \emph{\tempb}%
+		\else%
+		\hfill\rule{100pt}{0.5pt}\\%
+		\mbox{}\hfill\textsc{\tempa},\ \emph{\tempb},\ \tempc%
+		\fi\fi\par%
+		\vspace{1em}%
+	\end{list}%
+}%
+\makeatother
+
+
+

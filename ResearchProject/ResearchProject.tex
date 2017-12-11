@@ -1,0 +1,187 @@
+%%%------------------------------------%%%
+%%% Document
+%%%------------------------------------%%%
+\documentclass[ngerman, a4paper, 12pt, pdftex]{article}
+
+%%%------------------------------------%%%
+%%% Settings
+%%%------------------------------------%%%
+\input{Assets/SettingsDefinitions.tex}
+\input{Settings.tex}
+
+%%%------------------------------------%%%
+%%% Headings
+%%%------------------------------------%%%
+\input{Assets/Headings.tex}
+
+%%%------------------------------------%%%
+%%% Meta-Data
+%%%------------------------------------%%%
+\AtBeginDocument{
+	\hypersetup{
+		pdftitle=\pdftitle, 	% Set the PDF's title
+		pdfauthor=\pdfauthor, 	% Set the PDF's author
+		pdfkeywords=\pdftags 	% Set the PDF's keywords
+		pdfcreator={pdfLaTeX}
+	}
+}
+
+%%%--------------------------------%%%
+%%% Custom commands
+%%%--------------------------------%%%
+\input{CustomCommands.tex}
+
+%%%------------------------------------%%%
+%%%------------------------------------%%%
+\newcounter{savepage} 	% Counter for Acronyms, Glossary, List of Figures,
+						% Tables, Listings, Equations and Appendix
+
+\begin{document}	
+	\pagestyle{empty}
+	
+	%%%---Deckblatt
+	%%%--------------------------------%%%
+	\input{Assets/Cover.tex}
+	
+	%%%---Vermerk
+	%%%--------------------------------%%%
+	\clearpage
+	\input{Assets/Notice.tex}
+	
+	%%%---Abstract
+	%%%--------------------------------%%%
+	\clearpage
+	\input{Content/01_Abstract.tex}	
+	
+	%%%--------------------------------%%%
+	%%% Directories
+	%%%--------------------------------%%%
+	\clearpage
+	\pagestyle{simple} % Defined in Headings.tex
+	
+	\pagenumbering{Roman} 	% Continue with roman numbering
+	\setcounter{page}{1} 	% Continue with roman page counter
+	
+		%%%--------------------------------%%%
+		%%% Acronyms
+		%%%--------------------------------%%%
+		\input{Content/02_Acronyms.tex}
+		
+		%%%--------------------------------%%%
+		%%% Glossary
+		%%%--------------------------------%%%
+		\clearpage
+		\input{Content/03_Glossar}
+		
+		%%%--------------------------------%%%
+		%%% List of Figures, Tables, Listings and Equations
+		%%%--------------------------------%%%
+		\clearpage
+		\listoffigures			% List of Figures
+		
+		\clearpage
+		\listoftables			% List of Tables
+		
+		\clearpage
+		\lstlistoflistings		% List of Listings
+		
+		\clearpage		
+		\listofequations		% List of Equations
+		
+		%%%--------------------------------%%%
+		%%% Table of Content
+		%%%--------------------------------%%%
+		\clearpage
+		\pagestyle{empty}
+		
+		\setcounter{savepage}{\arabic{page}} 	% Save current roman page numer
+		\pagenumbering{arabic} 					% Continue with arabic numbering
+		
+		\etocdepthtag.toc{mtchapter}
+		\etocsettagdepth{mtchapter}{subsubsection}
+		\etocsettagdepth{mtappendix}{none}
+		\tableofcontents	
+	
+	%%%--------------------------------%%%
+	%%% Content
+	%%%--------------------------------%%%
+	\clearpage
+	\pagestyle{nice} % Defined in Headings.tex
+	
+	\setcounter{page}{1} % Reset page numbering
+	
+		%%%--------------------------------%%%
+		%%% Sections
+		%%%--------------------------------%%%
+		\input{Content/04_Introduction.tex}
+		
+		\clearpage
+		\input{Content/05_Background.tex}
+		
+		\clearpage
+		\input{Content/06_Purpose.tex}
+		
+		\clearpage
+		\input{Content/07_Theory.tex}
+		
+		\clearpage
+		\input{Content/08_IST.tex}
+		
+		\clearpage
+		\input{Content/09_SOLL.tex}	
+		
+		\clearpage
+		\input{Content/10_Implementation.tex}	
+		
+		\clearpage
+		\input{Content/11_Conclusion.tex}
+	
+	%%%--------------------------------%%%	
+	%%% Bibliography
+	%%%--------------------------------%%%	
+	\clearpage
+	
+	\phantomsection
+	\addcontentsline{toc}{section}{\nameofreferences}
+
+	\fancyhead[L]{\MakeUppercase{\nameofreferences}}	
+	\printbibliography[keyword=extern, title={\nameofreferences}]
+	\printbibliography[keyword=intern, title={\nameofreferencesinternal}]
+	
+	%%%--------------------------------%%%
+	%%% Appendix
+	%%%--------------------------------%%%
+	\clearpage
+	\label{appendix}
+	
+	\pagestyle{nice}
+	\fancyhead[L]{\MakeUppercase{\nameofappendix}}
+	\phantomsection
+	\addcontentsline{toc}{section}{\nameofappendix}
+	
+	\pagenumbering{Roman} 			% Continue with roman numbering
+	\setcounter{page}{\thesavepage} % Continue with roman page counter
+	
+	% Table of appendix	
+	\etocdepthtag.toc{mtappendix}
+	\etocsettagdepth{mtchapter}{none}
+	\etocsettagdepth{mtappendix}{subsection}
+	\etoctocstyle{1}{\nameofappendix}
+	\tableofcontents
+	
+	% Appendix content
+	\clearpage
+	\appendix
+	
+	\foreach \i in {00,01,02,03,04,05,06,07,08,09,...,99} {%
+		\edef\FileName{Appendix/\i_appendix}%
+		\IfFileExists{\FileName}{%
+			\input{\FileName}
+		}
+		{%
+			% File does not exist
+		}
+	}%foreach	
+\end{document}
+
+

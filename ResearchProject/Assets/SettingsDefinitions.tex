@@ -1,0 +1,66 @@
+\usepackage{pgffor}
+\newcommand{\setting}[1]{%
+	\expandafter\newcommand\csname #1\endcsname{}
+	\expandafter\newcommand\csname set#1\endcsname[1]{\expandafter\renewcommand\csname#1\endcsname{##1}}
+}
+
+%%%------------------------------------%%%
+%%% Settings Definitions
+%%%------------------------------------%%%
+\setting{pdftitle}
+\setting{pdfauthor}
+\setting{pdftags}
+
+\setting{typeface}
+
+%%%------------------------------------%%%
+%%% General
+%%%------------------------------------%%%
+\setting{titleofwork}
+\setting{typeofwork}
+\setting{authorofwork}
+
+\setting{nameoffigures}
+\setting{nameoftables}
+\setting{nameofacronymstable}
+\setting{nameoflistings}
+\setting{nameoflistingstable}
+\setting{nameofequationstable}
+
+\setting{nameofreferences}
+\setting{nameofreferencesinternal}
+\setting{nameofappendix}
+
+%%%------------------------------------%%%
+%%% Cover Sheet
+%%%------------------------------------%%%
+\setting{logoleft}
+\setting{logoright}
+\setting{widthoftitle}
+
+\setting{academicdegree}
+\setting{courseofstudies}
+\setting{university}
+
+\setting{dateofsubmission}
+\setting{periodoftime}
+
+\setting{matriculationnumber}
+\setting{nameofclass}
+\setting{company}
+\setting{companyheadquarter}
+
+\setting{supervisor}
+\setting{reviewer}
+
+%%%------------------------------------%%%
+%%% Affidavit
+%%%------------------------------------%%%
+
+
+
+
+
+
+
+

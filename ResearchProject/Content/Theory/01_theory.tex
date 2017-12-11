@@ -1,0 +1,67 @@
+%%%--------------------------------%%%
+%%% Theory 2
+%%%--------------------------------%%%
+\subsection{Theorie 2}
+\label{sec:theorieB}
+
+Dies ist eine Tabelle (Merke: Senkrechte Linien nur bei Zeilenbeschriftung):
+
+\medskip
+\begin{table}[!h]
+	\centering
+	{\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{cccc}
+			\toprule 
+			Menge & Umsatz & Kosten & Gewinn \\ \midrule 
+			0 & 0 & 10000 & $-10000$ \\ %\cmidrule{1-4}%
+			50 & 25000 & 25000 & 0 \\ %\cmidrule{1-4}%
+			100 & 50000 & 40000 & $+10000$ \\ %\cmidrule{1-4}%
+			150 & 75000 & 55000 & $+20000$ \\
+			\bottomrule 
+		\end{tabular}
+	}
+	\caption{Beispieltabelle}
+	\label{tab:BSP}
+\end{table}
+
+So kann man die Seite aufteilen, sodass links Text und rechts Bilder stehen:
+
+\bigskip
+
+\begin{paracol}{2}
+	This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text\dots
+	
+	\switchcolumn
+	
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.3\textheight]{Content/Figures/figure.png}
+		\caption{Test 1}
+		\label{fig:test1}
+	\end{figure}
+	\vfill
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.3\textheight]{Content/Figures/figure.png}
+		\caption{Test 2}
+		\label{fig:test2}
+	\end{figure}
+\end{paracol}
+
+\cleardoublepage
+
+This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text\dots
+
+\bigskip
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Content/Figures/figure.png}
+	\caption{Ich bin eine Bildunterschrift}
+	\label{fig:test}
+\end{figure}
+
+
+
+
+
+
