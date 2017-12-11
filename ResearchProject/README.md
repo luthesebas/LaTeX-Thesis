@@ -21,3 +21,7 @@ TODO
 - **CustomCommands.tex** - File in which user-defined commands can be defined
 
 - **references.bib** - File with all references
+
+- **ResearchProject.tex** - Main file that integrates everything
+
+- **Settings.tex** - Defines e.g. the mandatory information on the cover sheet
