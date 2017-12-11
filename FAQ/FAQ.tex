@@ -1,0 +1,142 @@
+%%%------------------------------------%%%
+%%% Document
+%%%------------------------------------%%%
+\documentclass[ngerman, a4paper, 12pt, pdftex]{article}
+\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage[ngerman]{babel}
+
+\parindent0cm
+\clubpenalty=10000
+\widowpenalty=10000
+
+%%%------------------------------------%%%
+%%% Line spacing
+%%%------------------------------------%%%
+\usepackage{setspace}
+
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+
+%%%------------------------------------%%%
+%%% Quote
+%%%------------------------------------%%%
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
+%%%------------------------------------%%%
+%%% Links
+%%%------------------------------------%%%
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks,colorlinks,breaklinks = true,
+	colorlinks = true, 		%Colours links instead of boxes
+	urlcolor   = black,		%Colour for external hyperlinks
+	linkcolor  = black, 	%Colour of internal links
+	citecolor  = black,		%Colour of citations
+	bookmarksopen = false
+}
+
+%%%------------------------------------%%%
+%%% Headings
+%%%------------------------------------%%%
+\newcommand{\namelistofquestions}{Liste of Questions}
+\newcommand{\namequestion}{(Q}
+\newcommand{\separator}{)~-~}
+\newcommand{\questionfgcolorRGB}{0,0,0}
+\newcommand{\questionbgcolorRGB}{222,222,222}
+
+\input{Headings.tex}
+
+%%%------------------------------------%%%
+%%% Meta-Data
+%%%------------------------------------%%%
+\newcommand{\pdftitle}{faq}
+\newcommand{\pdfauthor}{author}
+\newcommand{\pdftags}{tag1 tag2}
+
+\AtBeginDocument{
+	\hypersetup{
+		pdftitle=\pdftitle, 	% Set the PDF's title
+		pdfauthor=\pdfauthor, 	% Set the PDF's author
+		pdfkeywords=\pdftags 	% Set the PDF's keywords
+		pdfcreator={pdfLaTeX}
+	}
+}
+
+%%%------------------------------------%%%
+%%% Font  
+%%%------------------------------------%%%
+\usepackage{lmodern} % Use the palatino font
+
+
+\begin{document}
+	%%%------------------------------------%%%
+	%%% Title and List of Questions
+	%%%------------------------------------%%%
+	
+	\begin{center}
+		\Huge{\bf \emph{FAQ}}
+	\end{center}
+	
+	\listofquestions % list of questions
+	\clearpage
+	
+	%%%------------------------------------%%%
+	%%% Questions and Answers
+	%%%------------------------------------%%%
+	
+		%%%------------------------------------%%%
+		%%% Question
+		%%%------------------------------------%%%
+		\question{Questions with(out) numbering}
+		\label{question}
+		
+		Numbering:
+		\begin{verbatim}
+			\question{Question numbered}
+			\label{question:A}				
+			The answer of the question.
+		\end{verbatim}
+	
+		No numbering:
+		\begin{verbatim}
+			\questionl{Question not numbered}
+			\label{question:A}				
+			The answer of the question.
+		\end{verbatim}
+	
+		%%%------------------------------------%%%
+		%%% Question
+		%%%------------------------------------%%%
+		\question{How do I add a new question and answer?}
+		\label{question:A}
+		
+		It's easy - just type:
+		
+		\begin{verbatim}
+			\question{Question}
+			\label{question:A}	
+			
+			The answer of the question.
+		\end{verbatim}
+		
+		%%%------------------------------------%%%
+		%%% Question
+		%%%------------------------------------%%%	
+		\question{Can I redefine the color of the boxes?}
+		\label{question:B}
+		
+		Yes you can! You even can change the color of the question itself. Furthermore, you can adjust the \enquote{-} between the numbering and the question. 
+
+		%%%------------------------------------%%%
+		%%% Question
+		%%%------------------------------------%%%	
+		\questionl{Blub?}
+		\label{question:C}
+		
+		Bli bla bla blub!
+
+\end{document}

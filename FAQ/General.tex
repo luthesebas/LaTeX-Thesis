@@ -1,0 +1,87 @@
+%%%------------------------------------%%%
+%%% General
+%%%------------------------------------%%%
+\RequirePackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{microtype}
+
+\RequirePackage[ngerman]{babel}
+\addto\captionsngerman{\renewcommand{\refname}{Literatur}}
+
+\RequirePackage[headings]{fullpage}
+\RequirePackage{changepage}
+\RequirePackage[bottom]{footmisc}
+
+\parindent0cm
+\clubpenalty=10000
+\widowpenalty=10000
+
+%%%------------------------------------%%%
+%%% Line spacing
+%%%------------------------------------%%%
+\RequirePackage{setspace}
+
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+
+%%%------------------------------------%%%
+%%% Caption
+%%%------------------------------------%%%
+\RequirePackage{caption}
+\captionsetup{labelfont=sc, textfont=it} % ... in small caps
+\captionsetup[figure]{name=Abb.}
+\captionsetup[table]{name=Tab.}
+
+%%%------------------------------------%%%
+%%% Quotes
+%%%------------------------------------%%%
+\RequirePackage[autostyle=true,german=quotes]{csquotes}
+
+%%%------------------------------------%%%
+%%% Links
+%%%------------------------------------%%%
+\RequirePackage{hyperref}
+\hypersetup{
+	hidelinks,colorlinks,breaklinks = true,
+	colorlinks = true, 		%Colours links instead of boxes
+	urlcolor   = black,		%Colour for external hyperlinks
+	linkcolor  = black, 	%Colour of internal links
+	citecolor  = black,		%Colour of citations
+	bookmarksopen = false
+}
+
+%%%------------------------------------%%%
+%%% Bibliography
+%%%------------------------------------%%%
+\usepackage[
+backend=biber,
+style=authoryear,
+citestyle=authoryear]{biblatex}
+
+\newcommand{\auslassung}{[\dots]~}
+\newcommand{\citep}[1]{\citeauthor{#1} (\citeyear{#1})}
+
+%\RequirePackage{xpatch} % style=ieee
+%
+%%%% Bibliography fix
+%%%%------------------------------------%%%
+%\xpatchbibdriver{online}
+%{\printtext[parens]{\usebibmacro{date}}}
+%{\iffieldundef{year}
+%	{}
+%	{\printtext[parens]{\usebibmacro{date}}}}
+%{}
+%{\typeout{There was an error patching biblatex-ieee (specifically, ieee.bbx's @online driver)}}
+
+%%%------------------------------------%%%
+%%% Acronym
+%%%------------------------------------%%%
+\RequirePackage[printonlyused]{acronym}
+
+%%%------------------------------------%%%
+%%% Advanced enumeration
+%%%------------------------------------%%%
+\RequirePackage{enumitem}
+
