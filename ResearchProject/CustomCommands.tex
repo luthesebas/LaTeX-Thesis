@@ -11,7 +11,6 @@
 %%%------------------------------------%%%
 %%% Fancy Quotes
 %%%------------------------------------%%%
-
 \makeatletter
 \newenvironment{cquote}[2][2em]
 {\setlength{\@tempdima}{#1}%
@@ -21,7 +20,7 @@
 {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
 \makeatother
 
-\definecolor{quotemark}{gray}{0.7}
+\definecolor{quotemark}{gray}{0.3}
 \makeatletter
 \def\fquote{%
 	\@ifnextchar[{\fquote@i}{\fquote@i[]}%]
