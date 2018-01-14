@@ -11,7 +11,6 @@
 
 \usepackage[headings]{fullpage}
 \usepackage{changepage}
-%\usepackage[bottom]{footmisc} % Incompatible with paracol
 
 \parindent0cm
 \clubpenalty=10000
@@ -67,8 +66,12 @@
 %%%------------------------------------%%%
 \usepackage[
 	backend=biber,
-	style=authoryear,
-	citestyle=authoryear]{biblatex}
+	style=authoryear,					% alternative: alphabetic-verb
+	citestyle=authoryearbrack-ibid,		% alternative: alphabetic-verb
+	natbib=true,
+	uniquelist=true,
+	minbibnames=1,maxbibnames=4,
+	maxcitenames=1,mincitenames=1]{biblatex}
 \addbibresource{references.bib}
 
 %%%------------------------------------%%%
