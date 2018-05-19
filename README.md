@@ -34,7 +34,7 @@ Run **TeXstudio** and open _Options_ to configure **TeXstudio**
 
   - **PDF File**: ```\\metadata```
 
-These changes require that a folder named "metadata" exists next to your root LaTeX file of your current LaTeX project. Your folder structure might look something like this:
+**Important**: These changes require that a folder named "metadata" exists next to your root LaTeX file of your current LaTeX project. Your folder structure might look something like this:
 
 LaTeXProjectFolder  
 ├── root.tex  
