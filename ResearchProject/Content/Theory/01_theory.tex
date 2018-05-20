@@ -24,17 +24,34 @@ Dies ist eine Tabelle (Merke: Senkrechte Linien nur bei Zeilenbeschriftung) \din
 	\label{tab:BSP}
 \end{table}
 
-This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text\dots
+This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text
+This is just a dummy text This
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.4\textwidth]{Content/Figures/figure.png}
+	\caption{Bild im Textfluss bla bli blub bla bli blub blub blub blub blub blub blub blub bla}
+	\label{fig:test}
+\end{wrapfigure}
+
+This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a
 
 \bigskip
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.5\textwidth]{Content/Figures/figure.png}
-	\caption{Ich bin eine Bildunterschrift}
-	\label{fig:test}
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Content/Figures/figure.png}
+		\caption{Bild links}
+		\label{fig:testa}
+	\end{minipage}%
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Content/Figures/figure.png}
+		\caption{Bild rechts}
+		\label{fig:testb}
+	\end{minipage}
 \end{figure}
-
-
 
 
 
