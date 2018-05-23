@@ -1,0 +1,28 @@
+%%%--------------------------------%%%
+%%% Theory
+%%%--------------------------------%%%
+\section{Theorie 3}
+\label{sec:theorieC}
+
+Literaturangabe \#1 \textbackslash cite: \cite{max2007company} \\
+Literaturangabe \#2 \textbackslash parencite: \parencite{example2017sdk} \\
+Literaturangabe \#3 \textbackslash citep: \citep{place2014art} \\
+Literaturangabe \#4 \textbackslash citet: \citet{max2007company}
+
+\bigskip
+
+Einfügen von Listings (z.B. Quellcode):
+
+\begin{center}
+	\begin{minipage}[!H]{\textwidth}
+		\lstinputlisting[
+		style = fancy,
+		language = java,
+		label = alg:Declaration,
+		caption = Deklaration von Variablen in Java
+		]{Content/Listings/declaration.java}
+	\end{minipage}
+\end{center}
+\bigskip
+
+This is just a dummy text This is just a dummy text \seelistinginline{alg:Declaration} This is just a dummy text This is just a dummy text \seelisting{alg:Declaration}

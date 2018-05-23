@@ -1,28 +1,56 @@
 %%%--------------------------------%%%
-%%% Theory 3
+%%% Theory
 %%%--------------------------------%%%
-\section{Theorie 3}
-\label{sec:theorieC}
+\section{Theorie 2}
+\label{sec:theorieB}
 
-Literaturangabe \#1 \textbackslash cite: \cite{max2007company} \\
-Literaturangabe \#2 \textbackslash parencite: \parencite{example2017sdk} \\
-Literaturangabe \#3 \textbackslash citep: \citep{place2014art} \\
-Literaturangabe \#4 \textbackslash citet: \citet{max2007company}
+Dies ist eine Tabelle (Merke: Senkrechte Linien nur bei Zeilenbeschriftung) \ding{51} \ding{55}:
+
+\medskip
+\begin{table}[H]
+	\centering
+	{\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{cccc}
+			\toprule 
+			Menge & Umsatz & Kosten & Gewinn \\ \midrule 
+			0 & 0 & 10000 & $-10000$ \\ %\cmidrule{1-4}%
+			50 & 25000 & 25000 & 0 \\ %\cmidrule{1-4}%
+			100 & 50000 & 40000 & $+10000$ \\ %\cmidrule{1-4}%
+			150 & 75000 & 55000 & $+20000$ \\
+			\bottomrule 
+		\end{tabular}
+	}
+	\caption{Beispieltabelle}
+	\label{tab:BSP}
+\end{table}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\centering
+	\includegraphics[width=0.4\textwidth]{Content/Figures/figure.png}
+	\caption{Bild im Textfluss}
+	\label{fig:test}
+\end{wrapfigure}
+
+This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text
+This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a
 
 \bigskip
-
-Einfügen von Listings (z.B. Quellcode):
-
-\begin{center}
-	\begin{minipage}[!H]{\textwidth}
-		\lstinputlisting[
-		style = fancy,
-		language = java,
-		label = alg:Declaration,
-		caption = Deklaration von Variablen in Java
-		]{Content/Listings/declaration.java}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Content/Figures/figure.png}
+		\caption{Bild links}
+		\label{fig:testa}
+	\end{minipage}%
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{Content/Figures/figure.png}
+		\caption{Bild rechts}
+		\label{fig:testb}
 	\end{minipage}
-\end{center}
-\bigskip
+\end{figure}
 
-This is just a dummy text This is just a dummy text \seelistinginline{alg:Declaration} This is just a dummy text This is just a dummy text \seelisting{alg:Declaration}
+
+
+
