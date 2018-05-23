@@ -1,7 +1,7 @@
 %%%------------------------------------%%%
 %%% Document
 %%%------------------------------------%%%
-\documentclass[ngerman, a4paper, 11pt, pdftex]{article}
+\documentclass[ngerman, a4paper, 11pt, pdftex]{scrreprt}
 
 %%%------------------------------------%%%
 %%% Settings
@@ -93,14 +93,14 @@
 		%%%--------------------------------%%%
 		\clearpage
 		\pagestyle{empty}
-		
+				
 		\setcounter{savepage}{\arabic{page}} 	% Save current roman page numer
 		\pagenumbering{arabic} 					% Continue with arabic numbering
 		
 		\etocdepthtag.toc{mtchapter}
-		\etocsettagdepth{mtchapter}{subsubsection}
+		\etocsettagdepth{mtchapter}{subsection}
 		\etocsettagdepth{mtappendix}{none}
-		\tableofcontents	
+		\tableofcontents\thispagestyle{empty}	
 	
 	%%%--------------------------------%%%
 	%%% Content
@@ -115,25 +115,18 @@
 		%%%--------------------------------%%%
 		\input{Content/04_Introduction.tex}
 		
-		\clearpage
 		\input{Content/05_Background.tex}
 		
-		\clearpage
 		\input{Content/06_Purpose.tex}
 		
-		\clearpage
 		\input{Content/07_Theory.tex}
 		
-		\clearpage
-		\input{Content/08_IST.tex}
+		\input{Content/08_Analysis.tex}
 		
-		\clearpage
-		\input{Content/09_SOLL.tex}	
+		\input{Content/09_Conception.tex}	
 		
-		\clearpage
 		\input{Content/10_Implementation.tex}	
 		
-		\clearpage
 		\input{Content/11_Conclusion.tex}
 	
 	%%%--------------------------------%%%	
@@ -142,7 +135,7 @@
 	\clearpage
 	
 	\phantomsection
-	\addcontentsline{toc}{section}{\nameofreferences}
+	\addcontentsline{toc}{chapter}{\nameofreferences}
 
 	\fancyhead[L]{\MakeUppercase{\nameofreferences}}	
 	\printbibliography[keyword=extern, title={\nameofreferences}]
@@ -157,7 +150,7 @@
 	\pagestyle{nice}
 	\fancyhead[L]{\MakeUppercase{\nameofappendix}}
 	\phantomsection
-	\addcontentsline{toc}{section}{\nameofappendix}
+	\addcontentsline{toc}{chapter}{\nameofappendix}
 	
 	\pagenumbering{Roman} 			% Continue with roman numbering
 	\setcounter{page}{\thesavepage} % Continue with roman page counter
@@ -166,7 +159,7 @@
 	\etocdepthtag.toc{mtappendix}
 	\etocsettagdepth{mtchapter}{none}
 	\etocsettagdepth{mtappendix}{subsection}
-	\etoctocstyle{1}{\nameofappendix}
+	\etoctocstyle{0}{\nameofappendix}
 	\tableofcontents
 	
 	% Appendix content

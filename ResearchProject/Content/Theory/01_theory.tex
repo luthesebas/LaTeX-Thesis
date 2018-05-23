@@ -1,58 +1,27 @@
 %%%--------------------------------%%%
-%%% Theory 2
+%%% Theory
 %%%--------------------------------%%%
-\subsection{Theorie 2}
-\label{sec:theorieB}
+\section{Theorie 1}
+\label{sec:theorieA}
 
-Dies ist eine Tabelle (Merke: Senkrechte Linien nur bei Zeilenbeschriftung) \ding{51} \ding{55}:
-
-\medskip
-\begin{table}[!h]
-	\centering
-	{\renewcommand{\arraystretch}{1.5}
-		\begin{tabular}{cccc}
-			\toprule 
-			Menge & Umsatz & Kosten & Gewinn \\ \midrule 
-			0 & 0 & 10000 & $-10000$ \\ %\cmidrule{1-4}%
-			50 & 25000 & 25000 & 0 \\ %\cmidrule{1-4}%
-			100 & 50000 & 40000 & $+10000$ \\ %\cmidrule{1-4}%
-			150 & 75000 & 55000 & $+20000$ \\
-			\bottomrule 
-		\end{tabular}
-	}
-	\caption{Beispieltabelle}
-	\label{tab:BSP}
-\end{table}
-
-This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text
-This is just a dummy text This
-
-\begin{wrapfigure}{r}{0.5\textwidth}
-	\centering
-	\includegraphics[width=0.4\textwidth]{Content/Figures/figure.png}
-	\caption{Bild im Textfluss bla bli blub bla bli blub blub blub blub blub blub blub blub bla}
-	\label{fig:test}
-\end{wrapfigure}
-
-This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a
+This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text This is just a dummy text\dots
 
 \bigskip
-\begin{figure}[!h]
+\begin{figure}[H]
 	\centering
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{Content/Figures/figure.png}
-		\caption{Bild links}
-		\label{fig:testa}
-	\end{minipage}%
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{Content/Figures/figure.png}
-		\caption{Bild rechts}
-		\label{fig:testb}
-	\end{minipage}
+	\includegraphics[width=\textwidth]{Content/Figures/figure.png}
+	\caption{Ich bin eine Bildunterschrift}
+	\label{fig:test}
 \end{figure}
 
+Dies sind mathematische Ausdrücke, die im Formelverzeichnis auftauchen:
 
+\begin{equation}
+ax + b
+\eqlabel{eq:gerade}{Gerade}
+\end{equation}
 
-
+\begin{equation}
+U = p * x
+\eqlabel{eq:umsatz}{Umsatz}
+\end{equation}
