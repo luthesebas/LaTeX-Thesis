@@ -37,6 +37,7 @@
 						% Tables, Listings, Equations and Appendix
 
 \begin{document}	
+	\renewcommand*{\chapterpagestyle}{empty}
 	\pagestyle{empty}
 	
 	%%%---Deckblatt
@@ -57,6 +58,7 @@
 	%%% Directories
 	%%%--------------------------------%%%
 	\clearpage
+	\renewcommand*{\chapterpagestyle}{simple}
 	\pagestyle{simple} % Defined in Headings.tex
 	
 	\pagenumbering{Roman} 	% Continue with roman numbering
@@ -106,6 +108,7 @@
 	%%% Content
 	%%%--------------------------------%%%
 	\clearpage
+	\renewcommand*{\chapterpagestyle}{simple}
 	\pagestyle{nice} % Defined in Headings.tex
 	
 	\setcounter{page}{1} % Reset page numbering
@@ -133,23 +136,21 @@
 	%%% Bibliography
 	%%%--------------------------------%%%	
 	\clearpage
-	
-	\phantomsection
-	\addcontentsline{toc}{chapter}{\nameofreferences}
 
-	\fancyhead[L]{\MakeUppercase{\nameofreferences}}	
-	\printbibliography[keyword=extern, title={\nameofreferences}]
-	\printbibliography[keyword=intern, title={\nameofreferencesinternal}]
+	\phantomsection
+	\label{ch:bibliography}
+	\addcontentsline{toc}{chapter}{\nameofreferences}
+	
+	\printbibliography[keyword=extern, heading=bibintoc, title={\nameofreferences}]
+	\printbibliography[keyword=intern, heading=bibintoc, title={\nameofreferencesinternal}]
 	
 	%%%--------------------------------%%%
 	%%% Appendix
 	%%%--------------------------------%%%
 	\clearpage
-	\label{appendix}
 	
-	\pagestyle{nice}
-	\fancyhead[L]{\MakeUppercase{\nameofappendix}}
 	\phantomsection
+	\label{ch:appendix}
 	\addcontentsline{toc}{chapter}{\nameofappendix}
 	
 	\pagenumbering{Roman} 			% Continue with roman numbering
