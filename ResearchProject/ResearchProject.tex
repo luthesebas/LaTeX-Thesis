@@ -1,4 +1,11 @@
 %%%------------------------------------%%%
+%% Vorlage fuer Bachelorarbeiten (o.ae.)
+%%
+%% Autor: Sebastian Luther
+%%%------------------------------------%%%
+
+
+%%%------------------------------------%%%
 %%% Document
 %%%------------------------------------%%%
 \documentclass[ngerman, a4paper, 11pt, pdftex]{scrreprt}
@@ -19,10 +26,13 @@
 %%%------------------------------------%%%
 \AtBeginDocument{
 	\hypersetup{
-		pdftitle=\pdftitle, 	% Set the PDF's title
-		pdfauthor=\pdfauthor, 	% Set the PDF's author
-		pdfkeywords=\pdftags 	% Set the PDF's keywords
-		pdfcreator={pdfLaTeX}
+		pdftitle=\pdftitle, % Set the PDF's title
+		pdfauthor=\pdfauthor, % Set the PDF's author
+		pdfkeywords={\pdftags},	% Set the PDF's keywords
+		pdfsubject={\pdftitle},
+		pdfcreator={pdflatex, LaTeX with KOMA-Script},
+		pdfpagemode=UseOutlines,
+		pdfdisplaydoctitle=true,
 	}
 }
 
@@ -37,6 +47,7 @@
 						% Tables, Listings, Equations and Appendix
 
 \begin{document}	
+	\renewcommand*{\chapterpagestyle}{empty}
 	\pagestyle{empty}
 	
 	%%%---Deckblatt
@@ -57,6 +68,7 @@
 	%%% Directories
 	%%%--------------------------------%%%
 	\clearpage
+	\renewcommand*{\chapterpagestyle}{simple}
 	\pagestyle{simple} % Defined in Headings.tex
 	
 	\pagenumbering{Roman} 	% Continue with roman numbering
@@ -100,12 +112,13 @@
 		\etocdepthtag.toc{mtchapter}
 		\etocsettagdepth{mtchapter}{subsection}
 		\etocsettagdepth{mtappendix}{none}
-		\tableofcontents\thispagestyle{empty}	
+		\tableofcontents\thispagestyle{empty}
 	
 	%%%--------------------------------%%%
 	%%% Content
 	%%%--------------------------------%%%
 	\clearpage
+	\renewcommand*{\chapterpagestyle}{simple}
 	\pagestyle{nice} % Defined in Headings.tex
 	
 	\setcounter{page}{1} % Reset page numbering
@@ -133,23 +146,21 @@
 	%%% Bibliography
 	%%%--------------------------------%%%	
 	\clearpage
-	
-	\phantomsection
-	\addcontentsline{toc}{chapter}{\nameofreferences}
 
-	\fancyhead[L]{\MakeUppercase{\nameofreferences}}	
-	\printbibliography[keyword=extern, title={\nameofreferences}]
-	\printbibliography[keyword=intern, title={\nameofreferencesinternal}]
+	\phantomsection
+	\label{ch:bibliography}
+	\addcontentsline{toc}{chapter}{\nameofreferences}
+	
+	\printbibliography[keyword=extern, heading=bibintoc, title={\nameofreferences}]
+	\printbibliography[keyword=intern, heading=bibintoc, title={\nameofreferencesinternal}]
 	
 	%%%--------------------------------%%%
 	%%% Appendix
 	%%%--------------------------------%%%
 	\clearpage
-	\label{appendix}
 	
-	\pagestyle{nice}
-	\fancyhead[L]{\MakeUppercase{\nameofappendix}}
 	\phantomsection
+	\label{ch:appendix}
 	\addcontentsline{toc}{chapter}{\nameofappendix}
 	
 	\pagenumbering{Roman} 			% Continue with roman numbering
@@ -166,7 +177,7 @@
 	\clearpage
 	\appendix
 	
-	\foreach \i in {00,01,02,03,04,05,06,07,08,09,...,99} {%
+	\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
 		\edef\FileName{Appendix/\i_appendix}%
 		\IfFileExists{\FileName}{%
 			\input{\FileName}

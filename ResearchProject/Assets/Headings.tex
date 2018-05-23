@@ -15,6 +15,7 @@
 \parindent0cm
 \clubpenalty=10000
 \widowpenalty=10000
+\displaywidowpenalty=10000
 
 %%%------------------------------------%%%
 %%% Line spacing
@@ -84,14 +85,14 @@
 \fancypagestyle{nice}{%
 	\fancyhf{}
 	\fancyhead[L]{\leftmark}
-	\fancyfoot[C]{\thepage}
+	\fancyfoot[C]{\rule{3cm}{0.5pt}\\[0.1em]\thepage}
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
 
 \fancypagestyle{simple}{%
 	\fancyhead{}
-	\fancyfoot[R]{\thepage}
+	\fancyfoot[C]{\rule{3cm}{0.5pt}\\[0.1em]\thepage}
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
