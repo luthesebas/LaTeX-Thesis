@@ -26,9 +26,9 @@ Run **TeXstudio** and open _Options_ to configure **TeXstudio**
 
   - **Build & View**
 
-    - ```txs:///pdflatex | txs:///biber | txs:///pdflatex | txs:///pdflatex | txs:///compile | txs:///view```
+    - ```txs:///pdflatex | txs:///biber | txs:///compile | txs:///view```
 
-    - or: ```txs:///pdflatex | txs:///biber | txs:///pdflatex | txs:///pdflatex | txs:///view```
+    - or: ```txs:///pdflatex | txs:///biber | txs:///pdflatex | txs:///compile | txs:///view```
 
   - **Log File**: ```\\metadata```
 
