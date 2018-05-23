@@ -1,4 +1,11 @@
 %%%------------------------------------%%%
+%% Vorlage fuer Bachelorarbeiten (o.ae.)
+%%
+%% Autor: Sebastian Luther
+%%%------------------------------------%%%
+
+
+%%%------------------------------------%%%
 %%% Document
 %%%------------------------------------%%%
 \documentclass[ngerman, a4paper, 11pt, pdftex]{scrreprt}
@@ -19,10 +26,13 @@
 %%%------------------------------------%%%
 \AtBeginDocument{
 	\hypersetup{
-		pdftitle=\pdftitle, 	% Set the PDF's title
-		pdfauthor=\pdfauthor, 	% Set the PDF's author
-		pdfkeywords=\pdftags 	% Set the PDF's keywords
-		pdfcreator={pdfLaTeX}
+		pdftitle=\pdftitle, % Set the PDF's title
+		pdfauthor=\pdfauthor, % Set the PDF's author
+		pdfkeywords={\pdftags},	% Set the PDF's keywords
+		pdfsubject={\pdftitle},
+		pdfcreator={pdflatex, LaTeX with KOMA-Script},
+		pdfpagemode=UseOutlines,
+		pdfdisplaydoctitle=true,
 	}
 }
 
