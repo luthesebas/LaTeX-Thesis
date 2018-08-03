@@ -1,8 +1,8 @@
 %%%------------------------------------%%%
-%% Vorlage fuer Bachelorarbeiten (o.ae.)
-%%
-%% Autor: Sebastian Luther
+%% Template
+%% Author: Sebastian Luther
 %%%------------------------------------%%%
+
 
 
 %%%------------------------------------%%%
@@ -54,65 +54,65 @@
 	%%%--------------------------------%%%
 	\input{Assets/Cover.tex}
 	
+	%%%---Abstract
+	%%%--------------------------------%%%
+	\clearpage
+	\input{Content/Abstract.tex}	
+	
 	%%%---Vermerk
 	%%%--------------------------------%%%
 	\clearpage
 	\input{Assets/Notice.tex}
 	
-	%%%---Abstract
 	%%%--------------------------------%%%
-	\clearpage
-	\input{Content/01_Abstract.tex}	
+	%%% Table of Content
+	%%%--------------------------------%%%
+	\cleardoublepage
 	
-	%%%--------------------------------%%%
-	%%% Directories
-	%%%--------------------------------%%%
-	\clearpage
-	\renewcommand*{\chapterpagestyle}{simple}
-	\pagestyle{simple} % Defined in Headings.tex
-	
-	\pagenumbering{Roman} 	% Continue with roman numbering
-	\setcounter{page}{1} 	% Continue with roman page counter
+	\etocdepthtag.toc{mtchapter}
+	\etocsettagdepth{mtchapter}{subsection}
+	\etocsettagdepth{mtappendix}{none}
+	\tableofcontents\thispagestyle{empty}
 	
 		%%%--------------------------------%%%
-		%%% Acronyms
+		%%% Directories
 		%%%--------------------------------%%%
-		\input{Content/02_Acronyms.tex}
+		\cleardoublepage
+		\renewcommand*{\chapterpagestyle}{simple}
+		\pagestyle{simple} % Defined in Headings.tex
 		
-		%%%--------------------------------%%%
-		%%% Glossary
-		%%%--------------------------------%%%
-		\clearpage
-		\input{Content/03_Glossar}
+		\pagenumbering{Roman} 	% Continue with roman numbering
+		\setcounter{page}{1} 	% Continue with roman page counter
 		
-		%%%--------------------------------%%%
-		%%% List of Figures, Tables, Listings and Equations
-		%%%--------------------------------%%%
-		\clearpage
-		\listoffigures			% List of Figures
-		
-		\clearpage
-		\listoftables			% List of Tables
-		
-		\clearpage
-		\lstlistoflistings		% List of Listings
-		
-		\clearpage		
-		\listofequations		% List of Equations
-		
-		%%%--------------------------------%%%
-		%%% Table of Content
-		%%%--------------------------------%%%
-		\clearpage
-		\pagestyle{empty}
-				
-		\setcounter{savepage}{\arabic{page}} 	% Save current roman page numer
-		\pagenumbering{arabic} 					% Continue with arabic numbering
-		
-		\etocdepthtag.toc{mtchapter}
-		\etocsettagdepth{mtchapter}{subsection}
-		\etocsettagdepth{mtappendix}{none}
-		\tableofcontents\thispagestyle{empty}
+			%%%--------------------------------%%%
+			%%% List of Figures, Tables, Listings and Equations
+			%%%--------------------------------%%%
+			\phantomsection
+			\addcontentsline{toc}{chapter}{\listfigurename}
+			\listoffigures			% List of Figures
+			
+			\cleardoublepage
+			\phantomsection
+			\addcontentsline{toc}{chapter}{\listtablename}
+			\listoftables			% List of Tables
+			
+			\cleardoublepage
+			\phantomsection
+			\addcontentsline{toc}{chapter}{\nameoflistingstable}
+			\lstlistoflistings		% List of Listings
+			
+			\cleardoublepage
+			\phantomsection
+			\addcontentsline{toc}{chapter}{\nameofequationstable}
+			\listofequations		% List of Equations
+	
+			%%%--------------------------------%%%
+			%%% Acronyms
+			%%%--------------------------------%%%
+			\cleardoublepage
+			\phantomsection
+			\addcontentsline{toc}{chapter}{\nameofacronymstable}
+			\input{Content/Acronyms.tex}
 	
 	%%%--------------------------------%%%
 	%%% Content
@@ -121,50 +121,57 @@
 	\renewcommand*{\chapterpagestyle}{simple}
 	\pagestyle{nice} % Defined in Headings.tex
 	
+	\setcounter{savepage}{\arabic{page}} 	% Save current roman page numer
+	\pagenumbering{arabic} 					% Continue with arabic numbering
+	
 	\setcounter{page}{1} % Reset page numbering
 	
 		%%%--------------------------------%%%
 		%%% Sections
 		%%%--------------------------------%%%
-		\input{Content/04_Introduction.tex}
+		\input{Content/01_Introduction.tex}
 		
-		\input{Content/05_Background.tex}
+		\input{Content/02_Background.tex}
 		
-		\input{Content/06_Purpose.tex}
+		\input{Content/03_Purpose.tex}
 		
-		\input{Content/07_Theory.tex}
+		\input{Content/04_Theory.tex}
 		
-		\input{Content/08_Analysis.tex}
+		\input{Content/05_Analysis.tex}
 		
-		\input{Content/09_Conception.tex}	
+		\input{Content/06_Conception.tex}	
 		
-		\input{Content/10_Implementation.tex}	
+		\input{Content/07_Implementation.tex}	
 		
-		\input{Content/11_Conclusion.tex}
+		\input{Content/08_Conclusion.tex}
 	
 	%%%--------------------------------%%%	
 	%%% Bibliography
 	%%%--------------------------------%%%	
-	\clearpage
-
-	\phantomsection
-	\label{ch:bibliography}
-	\addcontentsline{toc}{chapter}{\nameofreferences}
+	\cleardoublepage
 	
 	\printbibliography[keyword=extern, heading=bibintoc, title={\nameofreferences}]
-	\printbibliography[keyword=intern, heading=bibintoc, title={\nameofreferencesinternal}]
+	\printbibliography[keyword=intern, title={\nameofreferencesinternal}]
+	
+	%%%--------------------------------%%%
+	%%% Glossary
+	%%%--------------------------------%%%
+	\cleardoublepage
+	
+	\pagenumbering{Roman} 			% Continue with roman numbering
+	\setcounter{page}{\thesavepage} % Continue with roman page counter
+	
+	\input{Content/Glossar}
+	\addcontentsline{toc}{chapter}{Glossar}
 	
 	%%%--------------------------------%%%
 	%%% Appendix
 	%%%--------------------------------%%%
-	\clearpage
+	\cleardoublepage
 	
 	\phantomsection
 	\label{ch:appendix}
 	\addcontentsline{toc}{chapter}{\nameofappendix}
-	
-	\pagenumbering{Roman} 			% Continue with roman numbering
-	\setcounter{page}{\thesavepage} % Continue with roman page counter
 	
 	% Table of appendix	
 	\etocdepthtag.toc{mtappendix}
