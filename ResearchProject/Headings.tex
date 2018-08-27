@@ -98,7 +98,7 @@
 %%%------------------------------------%%%
 %%% Advanced Color
 %%%------------------------------------%%%
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 
 %%%------------------------------------%%%
 %%% Picture
@@ -109,6 +109,7 @@
 \usepackage{wrapfig}
 \usepackage{subfig}
 \usepackage{placeins} % For \FloatBarrier
+\graphicspath{{Content/Figures/}}
 
 %%%------------------------------------%%%
 %%% Table
@@ -118,33 +119,10 @@
 \usepackage{multirow}	
 \usepackage{tabularx}
 \usepackage{booktabs}
-
-% \begin{tabular}[<pos>]{<spc>}
-
-% <pos> = !b (bottom), !t (top),  !h (here)
-% <spc> = l (left), c (center), r (right), | 
-% 		= p{<width>} (vertically top), 
-% 		  m{<width>} (vertically middle), 
-% 		  b{<width>} (vertically bottom)
-
-%\bigskip
-%\begin{table}[h!]
-%	\centering
-%	{\renewcommand{\arraystretch}{1.5}
-%		\begin{tabular}{cc}
-%			\toprule 
-%			Hi & du \\ 
-%			\midrule 
-%			da & ! \\ 
-%			da & ! \\ 
-%			\cmidrule{1}
-%			da & ! \\
-%			\bottomrule 
-%		\end{tabular}
-%	}
-%	\caption{Hallo du da}
-%	\label{tab:BSP}
-%\end{table}
+\renewcommand{\arraystretch}{1.3}
+\definecolor{rowfirst}{RGB}{245, 245, 245}
+\definecolor{rowsecond}{RGB}{250, 250, 250}
+%\rowcolors{1}{rowfirst}{rowsecond}
 
 %%%------------------------------------%%%
 %%% Acronym
@@ -183,6 +161,7 @@
 \renewcommand{\lstlistlistingname}{\nameoflistoflistings}
 
 \lstset{
+	inputpath=Content/Listings/,
 	literate=
 	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
 	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
@@ -205,7 +184,7 @@
 \definecolor{lstBlue}{RGB}{42,0,255} 	% strings
 \definecolor{lstGreen}{RGB}{41,96,68} 	% comments
 \definecolor{lstPurple}{RGB}{127,0,85} 	% keywords
-\definecolor{lstBG}{RGB}{255, 255, 255} % background
+\definecolor{lstBG}{RGB}{250, 250, 250} % background
 
 %%% Code style > FANCY <
 %%%------------------------------------%%%
