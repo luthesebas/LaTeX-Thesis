@@ -47,127 +47,122 @@
 						% Tables, Listings, Equations and Appendix
 
 \begin{document}	
-	\renewcommand*{\chapterpagestyle}{empty}
-	\pagestyle{empty}
-	
-	%%%---Deckblatt
+	%%%---Cover
 	%%%--------------------------------%%%
 	\input{Assets/Cover.tex}
 	
 	%%%---Abstract
 	%%%--------------------------------%%%
-	\clearpage
 	\input{Content/Abstract.tex}	
 	
-	%%%---Vermerk
+	%%%---Notice
 	%%%--------------------------------%%%
-	\clearpage
 	\input{Assets/Notice.tex}
 	
 	%%%--------------------------------%%%
 	%%% Table of Content
 	%%%--------------------------------%%%
 	\cleardoublepage
-	
 	\etocdepthtag.toc{mtchapter}
 	\etocsettagdepth{mtchapter}{subsection}
 	\etocsettagdepth{mtappendix}{none}
 	\tableofcontents\thispagestyle{empty}
 	
-		%%%--------------------------------%%%
-		%%% Directories
-		%%%--------------------------------%%%
-		\cleardoublepage
-		\renewcommand*{\chapterpagestyle}{simple}
-		\pagestyle{simple} % Defined in Headings.tex
-		
-		\pagenumbering{Roman} 	% Continue with roman numbering
-		\setcounter{page}{1} 	% Continue with roman page counter
-		
-			%%%--------------------------------%%%
-			%%% List of Figures, Tables, Listings and Equations
-			%%%--------------------------------%%%
-			\phantomsection
-			\addcontentsline{toc}{chapter}{\listfigurename}
-			\listoffigures			% List of Figures
-			
-			\cleardoublepage
-			\phantomsection
-			\addcontentsline{toc}{chapter}{\listtablename}
-			\listoftables			% List of Tables
-			
-			\cleardoublepage
-			\phantomsection
-			\addcontentsline{toc}{chapter}{\nameoflistingstable}
-			\lstlistoflistings		% List of Listings
-			
-			\cleardoublepage
-			\phantomsection
-			\addcontentsline{toc}{chapter}{\nameofequationstable}
-			\listofequations		% List of Equations
+	%%%---------------------------------------------------%%%
+	%%% List of Figures, Tables, Listings, Equations, ...
+	%%%---------------------------------------------------%%%
+	\cleardoublepage
+	\renewcommand*{\chapterpagestyle}{simple} 	% Page style 'simple'
+	\pagestyle{simple}							% is defined in the 
+	% Headings.tex
+	\pagenumbering{Roman} 	% Continue with roman numbering
+	\setcounter{page}{1} 	% Continue with roman page counter
 	
-			%%%--------------------------------%%%
-			%%% Acronyms
-			%%%--------------------------------%%%
-			\cleardoublepage
-			\phantomsection
-			\addcontentsline{toc}{chapter}{\nameofacronymstable}
-			\input{Content/Acronyms.tex}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\listoffigures		% List of Figures
+	
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listtablename}
+	\listoftables		% List of Tables
+	
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\nameoftableoflistings}
+	\lstlistoflistings	% List of Listings
+	
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\nameoftableofequations}
+	\listofequations	% List of Equations
+
+	%%%--------------------------------%%%
+	%%% Acronyms
+	%%%--------------------------------%%%
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\nameoftableofacronyms}
+	\input{Content/Acronyms.tex}
+	
+	%%%--------------------------------%%%
+	%%% Glossary
+	%%%--------------------------------%%%
+	\input{Content/Glossar}
+	\addcontentsline{toc}{chapter}{Glossar}
 	
 	%%%--------------------------------%%%
 	%%% Content
 	%%%--------------------------------%%%
 	\clearpage
-	\renewcommand*{\chapterpagestyle}{simple}
 	\pagestyle{nice} % Defined in Headings.tex
+	\renewcommand*{\chapterpagestyle}{simple}
 	
-	\setcounter{savepage}{\arabic{page}} 	% Save current roman page numer
-	\pagenumbering{arabic} 					% Continue with arabic numbering
+	\setcounter{savepage}{\arabic{page}} % Save current roman page numer
 	
-	\setcounter{page}{1} % Reset page numbering
+	\pagenumbering{arabic} 	% Continue with arabic numbering
+	\setcounter{page}{1} 	% Set content page numbering to 1
 	
-		%%%--------------------------------%%%
-		%%% Sections
-		%%%--------------------------------%%%
-		\input{Content/01_Introduction.tex}
-		
-		\input{Content/02_Background.tex}
-		
-		\input{Content/03_Purpose.tex}
-		
-		\input{Content/04_Theory.tex}
-		
-		\input{Content/05_Analysis.tex}
-		
-		\input{Content/06_Conception.tex}	
-		
-		\input{Content/07_Implementation.tex}	
-		
-		\input{Content/08_Conclusion.tex}
+	%%%--------------------------------%%%
+	%%% Chapters
+	%%%--------------------------------%%%
+	\input{Content/01_Introduction.tex}
+	
+	\input{Content/02_Background.tex}
+	
+	\input{Content/03_Purpose.tex}
+	
+	\input{Content/04_Theory.tex}
+	
+	\input{Content/05_Analysis.tex}
+	
+	\input{Content/06_Conception.tex}	
+	
+	\input{Content/07_Implementation.tex}	
+	
+	\input{Content/08_Conclusion.tex}
 	
 	%%%--------------------------------%%%	
 	%%% Bibliography
 	%%%--------------------------------%%%	
 	\cleardoublepage
 	
-	\printbibliography[keyword=extern, heading=bibintoc, title={\nameofreferences}]
-	\printbibliography[keyword=intern, title={\nameofreferencesinternal}]
-	
-	%%%--------------------------------%%%
-	%%% Glossary
-	%%%--------------------------------%%%
-	\cleardoublepage
-	
-	\pagenumbering{Roman} 			% Continue with roman numbering
-	\setcounter{page}{\thesavepage} % Continue with roman page counter
-	
-	\input{Content/Glossar}
-	\addcontentsline{toc}{chapter}{Glossar}
+	\printbibliography[
+		keyword=extern, 
+		heading=bibintoc, 
+		title={\nameofreferences}
+	]
+	\printbibliography[
+		keyword=intern, 
+		title={\nameofreferencesinternal}
+	]
 	
 	%%%--------------------------------%%%
 	%%% Appendix
 	%%%--------------------------------%%%
 	\cleardoublepage
+	\pagenumbering{Roman} 			% Continue with roman numbering
+	\setcounter{page}{\thesavepage} % Continue with roman page counter
 	
 	\phantomsection
 	\label{ch:appendix}
@@ -184,7 +179,7 @@
 	\clearpage
 	\appendix
 	
-	\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
+	\foreach \i in {00,01,02,03,04,05,06,07,08,09,...,99} {%
 		\edef\FileName{Appendix/\i_appendix}%
 		\IfFileExists{\FileName}{%
 			\input{\FileName}
