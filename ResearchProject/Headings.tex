@@ -8,6 +8,8 @@
 
 \usepackage[ngerman]{babel}
 \addto\captionsngerman{\renewcommand{\refname}{\nameofreferences}}
+\addto\captionsngerman{\renewcommand\listfigurename{\nameoflistoffigures}}
+\addto\captionsngerman{\renewcommand\listtablename{\nameoflistoftables}}
 
 \usepackage[headings]{fullpage}
 \usepackage{changepage}
@@ -21,10 +23,6 @@
 %%% Line spacing
 %%%------------------------------------%%%
 \usepackage{setspace}
-
-%\singlespacing
-%\onehalfspacing
-%\doublespacing
 \spacing{1.5}
 
 %%%--------------------------------%%%
@@ -186,7 +184,7 @@
 %%%------------------------------------%%%
 \usepackage{float}
 \newfloat{eq}{H}{for}[section]
-\newcommand{\forname}{\nameoftableofequations}
+\newcommand{\forname}{\nameoflistofequations}
 \newcommand{\listofequations}{\listof{eq}{\forname}}
 
 \newcommand{\eqlabel}[2]{
@@ -198,7 +196,7 @@
 %%%------------------------------------%%%
 \usepackage{listings}
 \renewcommand{\lstlistingname}{\nameoflistings}
-\renewcommand{\lstlistlistingname}{\nameoftableoflistings}
+\renewcommand{\lstlistlistingname}{\nameoflistoflistings}
 
 \lstset{
 	literate=
