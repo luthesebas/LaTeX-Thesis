@@ -186,7 +186,7 @@
 %%%------------------------------------%%%
 \usepackage{float}
 \newfloat{eq}{H}{for}[section]
-\newcommand{\forname}{\nameofequationstable}
+\newcommand{\forname}{\nameoftableofequations}
 \newcommand{\listofequations}{\listof{eq}{\forname}}
 
 \newcommand{\eqlabel}[2]{
@@ -198,7 +198,7 @@
 %%%------------------------------------%%%
 \usepackage{listings}
 \renewcommand{\lstlistingname}{\nameoflistings}
-\renewcommand{\lstlistlistingname}{\nameoflistingstable}
+\renewcommand{\lstlistlistingname}{\nameoftableoflistings}
 
 \lstset{
 	literate=
@@ -216,21 +216,6 @@
 	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
 	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
 }
-
-%\bigskip
-%\begin{center}
-%	\begin{minipage}[!h]{\textwidth}
-%		\lstinputlisting[
-%		style = nice,
-%		language = java,
-%		label = alg:BSP,
-%		caption = Deklaration,
-%		firstline = 4, lastline = 7, firstnumber = 4
-%		]{Code/algDeclaration.java}
-%	\end{minipage}
-%\end{center}
-
-%\lstinputlisting[nolol = true, style = txtfile]{Code/exception.txt}
 
 %%%------------------------------------%%%
 %%% Fancy Listings
