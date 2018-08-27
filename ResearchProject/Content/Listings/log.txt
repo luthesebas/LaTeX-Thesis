@@ -1,0 +1,4 @@
+# Input Param a = 5
+# Input Param b = 8
+[Error] Input Param 'b' must be lower than input param 'a'
+# Exiting program
