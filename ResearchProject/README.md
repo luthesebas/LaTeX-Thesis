@@ -1,20 +1,40 @@
 ## Template: ResearchProject
 
-TODO
+First of all, you have to adjust the information in the ```Settings.tex```. There you define the title and author of the work and so on. Then the files in the ```Assets``` and ```Content``` folders have to be adapted or filled with content.
+
+You have to compile the ```ResearchProject.tex``` to let generate the pdf file.
 
 ## Folder Structure
 
-- **Appendix/** - Contains one file per appendix (scheme: ```<nn>_appendix.tex``` - e.g. ```00_appendix.tex```)
+- **Appendix/** - Contains all appendix files (name scheme: ```<nn>_appendix.tex``` - e.g. ```01_appendix.tex```)
 
-- **Assets/** - Contains internally used files (e.g. imports of packages)
+- **Assets/** - Contains miscellaneous files e.g. cover, abstract, glossary, ...
 
-- **Content/** - Contains all files that need to be filled with content
+- **Content/** - Contains all content files
 
   - **Figures/** - Contains all figures
 
   - **Listings/** - Contains all listings
+    
+  - **Analysis/** - Contains all analysis files 
+    (name scheme: ```<nn>_analysis.tex``` - e.g. ```01_analysis.tex```)
 
-  - **Theory/** - Contains one file per theory section (scheme: ```<nn>_theory.tex``` - e.g. ```00_theory.tex```)
+  - **Conception/** - Contains all conception files 
+    (name scheme: ```<nn>_conception.tex``` - e.g. ```01_conception.tex```)
+
+  - **Implementation/** - Contains all analysis files 
+    (name scheme: ```<nn>_implementation.tex``` - e.g. ```01_implementation.tex```)
+
+  - **Theory/** - Contains all theory files 
+    (name scheme: ```<nn>_theory.tex``` - e.g. ```01_theory.tex```)
+  
+  - **Introduction.text** - File for the introduction of the topic/problem/purpose
+  
+  - **Background.tex** - File for the explanation of the problem
+  
+  - **Purpose.tex** - File  for the explanation of the purpose
+  
+  - **Conclusion.tex** - File for the summary
 
 - **metadata/** - Contains all files generated during PDF building
 
