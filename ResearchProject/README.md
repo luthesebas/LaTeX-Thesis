@@ -28,7 +28,7 @@ You have to compile the ```ResearchProject.tex``` to let generate the pdf file.
   - **Theory/** - Contains all theory files 
     (name scheme: ```<nn>_theory.tex``` - e.g. ```01_theory.tex```)
   
-  - **Introduction.text** - File for the introduction of the topic/problem/purpose
+  - **Introduction.tex** - File for the introduction of the topic/problem/purpose
   
   - **Background.tex** - File for the explanation of the problem
   
