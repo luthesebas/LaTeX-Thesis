@@ -1,4 +1,4 @@
-## Template: ResearchProject
+## LaTeX-Thesis
 
 First of all, you have to adjust the information in the ```Settings.tex```. There you define the title and author of the work and so on. Then the files in the ```Assets``` and ```Content``` folders have to be adapted or filled with content.
 
