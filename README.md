@@ -1,4 +1,4 @@
-## LaTeXTemplates
+## LaTeX-Thesis
 
 TODO
 
